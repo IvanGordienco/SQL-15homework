@@ -12,7 +12,7 @@ def get_animals_by_id(ix):
     query = f"""
                 SELECT * 
                 FROM animal_fin
-                LEFT JOIN outcomes on outcomes.animal_id=animal_fin.animal_id
+                LEFT JOIN outcomes on outcomes.animals_id=animal_fin.animal_id
                 WHERE animal_fin.id = {ix} 
     """
     cursor.execute(query)
@@ -54,4 +54,4 @@ def get_animals_by_id(ix):
 #     return jsonify(result)
 #
 #
-# app.run(debug=True)
+app.run(debug=True)
